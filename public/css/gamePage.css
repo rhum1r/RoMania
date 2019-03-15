@@ -1,0 +1,323 @@
+#mainContent {
+	background-color : #d7d7d7;
+	width : 40%;
+	min-width : 900px;
+	margin-left : auto;
+	margin-right : auto;
+	margin-top : 20px;
+	margin-bottom : 20px;
+  	padding : 20px;
+  	
+  	display: flex;
+  	flex-direction : column;
+  	align-items : center;
+  	
+  	box-shadow: 5px 5px 15px #888888;
+}
+
+#upperContent {
+  	display: flex;
+	width : 750px;
+}
+
+#cover {
+	margin-right : 10px;
+}
+
+
+#infosPrice h2 {
+	background-color : black;
+	color : white;
+	text-align : center;
+	margin-top : 0px;
+	margin-bottom : 50px;
+}
+
+#infosPrice {
+	height : 400px;
+	width : 440px;
+	background-color : white;
+	display:flex;
+	flex-direction : column;
+	justify-content : space-between;
+}
+
+#infos {
+	text-align: center;
+	color : #5a5a5a;
+}
+
+#flags {
+
+	background-color : #d7d7d7;
+	display : inline-block;
+	height : 25px;
+	padding : 10px; 
+	border-radius : 5px;
+}
+
+#buy {
+	background: black;
+	padding: 14px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+#priceWrapper {
+	background-color : black;
+	text-align: right;
+	margin-right: 25px;
+	width: 227px;
+}
+
+#priceTitle {
+	color : #7c7c7c;
+	font-size : 14px;
+	margin-bottom : 0px;
+}
+
+#price {
+	color : #FF5400;
+	font-size : 42px;
+	font-weight : bold;
+	margin-top : 0px;
+}
+
+#butWrapper {
+	width: 227px;
+	display : flex;
+	position : relative;
+}
+
+
+#buyBut {
+	background: #FF5400;
+	color : white;
+	text-align: center;
+	text-decoration : none;
+	
+	box-sizing : border-box;
+	width : 170px;
+	height : 60px;
+	
+	display:flex;
+	justify-content : space-between;
+	align-items : center;
+	border-radius : 5px 0px 0px 5px;;
+	padding : 0px 35px;
+}
+
+#buyButArrow {
+	height : 40px;
+	width : 39px;
+	background-color: #FF5400;
+	position: absolute;
+	right : 5px;
+	top : 10px;
+	transform: rotate(45deg) skew(15deg,15deg) ;
+	border-radius : 10px 5px;
+}
+
+#butWrapper{
+	transform: translateX(0px);
+	transition: transform 0,9s ease;
+	
+}
+
+#butWrapper:hover{
+	transform: translateX(10px);
+}
+
+#middleContent {
+	margin-top : 50px;
+	min-height : 300px;
+	width : 750px;
+	background-color : white;
+	box-shadow: 1px 1px 2px 0 rgba(0,0,0,.1);
+}
+
+.tabs {
+	display: inline-block;
+	padding : 13px 25px 0;
+	height : 27px;
+	background-color : white;
+	color : #5a5a5a; 
+	border-radius: 5px 5px 0 0;
+	border-bottom : 1px solid black;
+	box-shadow: 2px 0px 0px 0px rgba(0,0,0,1);
+	position : relative;
+	bottom : 40px;
+	text-decoration : none;	
+}
+
+.tabs:hover {
+	background-color: #FF5400;
+	color : white;
+}
+
+.tabContent {
+	font-size : 80%;
+	padding-left : 50px;
+	padding-right : 50px;
+	text-align : justify;
+	
+}
+
+
+#selectedTab {
+	color : white;
+	background-color : black;
+}
+
+#infosWrapper {
+	color : #b2b2b2;
+	
+}
+/* Configuration section */
+
+
+#confWrapper {
+	display: none;
+	color : #b2b2b2;
+	
+}
+
+.confTitle{
+	color : #FF5400;
+}
+.conf{
+	display : flex;
+	flex-direction : column;
+}
+
+.configContent {
+	color : #5a5a5a; 
+	display: inline-block;
+}
+
+.configTitle {
+	
+	display: inline-block;
+}
+
+
+/* COMMENT SECTION */
+
+#comfWrapper {
+	display: none;
+	color : #b2b2b2;
+}
+
+#comfWrapper h4 {
+	color : #FF5400;
+	margin-top : 3px;
+	margin-bottom : 3px;
+}
+
+#comments {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	
+}
+.comment{
+	width : 45%;
+	padding: 10px;
+	border : 1px #D7D7D7 solid;
+	border-radius : 5px 5px 5px 5px;
+	box-shadow: 3px 3px 4px 0px #D7D7D7;
+	display:flex;
+	
+	margin-bottom: 10px;
+	box-sizing: content-box;
+}
+
+#commentContent div p {
+	margin : 0px;
+}
+#commentText {
+	overflow-wrap : anywhere;
+}
+
+#userImg {
+	border-radius : 50%;
+	border : 5px solid #EEEEEE;
+	padding : 5px;
+	height : 90px;
+	width : 90px;
+	display:flex;
+}
+
+#userImg:hover {
+	border-radius : 50%;
+	height : 100px;
+	width : 100px;
+	padding : 0px;
+	border : 5px solid #FF5400;
+}
+
+#userImgDiv {
+/* 	border-radius : 50%; */
+/* 	border : 5px solid #EEEEEE; */
+/* 	padding : 5px; */
+	height : 110px;
+	width : 110px;
+	margin-right : 10px;
+/* 	display:flex; */
+	
+/* 	margin-right : 10px; */
+}
+
+
+/* FORMULAIRE DE COMMENT SECTION */
+#postComment{
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-bottom: 20px;
+	min-width: 50%;
+	border : 1px #D7D7D7 solid;
+	color : white;
+	border-radius : 5px 5px 5px 5px;
+	box-shadow: 3px 3px 4px 0px #D7D7D7;
+}
+
+.radioBut {
+	visibility : hidden;
+}
+
+.postCommentSection {
+	color : #FF5400;
+	text-align: center;
+	margin : 10px;
+}
+
+#postCommentBut input {
+	color : white;
+	background-color : #FF5400;
+	height : 30px;
+	width : 100px;
+	border : 0px;
+	border-radius : 3px;
+	font-size : 120%;
+}
+
+#postCommentBut input:hover {
+	background-color : #ffa700;
+	width:125px;
+    height:33px;
+}
+
+#noCommentMess {
+	height : 50px;
+	width : 100%;
+	text-align : center;
+	border : 1px #D7D7D7 solid;
+	border-radius : 5px 5px 5px 5px;
+	box-shadow: 3px 3px 4px 0px #D7D7D7;
+	margin-bottom : 20px;
+}
+
+#noCommentMess p span {
+	color : #FF5400;
+}

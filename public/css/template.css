@@ -1,0 +1,34 @@
+body {
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+footer{
+    text-align: center;
+    margin-top: 9em;
+    color : white;
+    background-color : black;
+    height : 150px;
+}
+
+                    /* Nav */
+
+#upperNav{
+	background-color: black;
+	height: 200px;
+	padding-left: 10%;
+}                    
+
+#dowNav{
+    background-color: #363636;
+    height: 30px;
+}
+
+#errorMess{
+	color : red;
+}
+*::-moz-selection {
+background:#FF5400;
+color:white; 
+
+
+
