@@ -13,13 +13,22 @@ class Comments extends DbConnect {
         return $req->fetchAll();
     }
     
+    public function getCommentById($id) {
+        
+        $req = static::$db->prepare('SELECT id, idGame, comment, author, mark, user_img, DATE_FORMAT(add_date, '
+            . '\'%d/%m à %Hh%im\') as date FROM game_comments WHERE id = :id' );
+        $req->execute([':id'=>$id]);
+        
+        return $req->fetch();
+    }
+    
     public function postComment($id, $author, $comment, $mark) {
         
         $req = static::$db->prepare('INSERT INTO game_comments (idGame, comment, author, mark, add_date) ' 
                                    .'VALUES (?, ?, ?, ?, NOW() )');
 
         $req->execute(array($id, $comment, $author, $mark));
-        return $req;
+        return static::$db->lastInsertId();
     }
     
 }

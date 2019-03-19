@@ -94,38 +94,31 @@ ob_start()?>
 				     <?php } ?>
 
 				<div id="comments">
-					<?php foreach($comments as $comment){ ?>
-					<div class="comment">
-						<div id="userImgDiv">
-							<img id="userImg" alt="useImage" src="<?= $comment['user_img']?>"  height="90" width="90">
-						</div>
-						
-						<div id="commentContent">
-							<div>
-								<p><?php for($i=0; $i<$comment['mark']; $i++ ){?>
-								    <img alt="commentStar" src="../images/CommentNotes/staron.gif">
-								<?php }?></p>
-							</div>
-							
-							<div>
-								<h4><?= $comment['author'] ?> </br><span id="commentDate"><?= $comment['date'] ?></span></h4>
-							</div>
-							
-							<div>
-								<p id="commentText"><?= $comment['comment'] ?></p>
-							</div>
-                        </div>
-					</div>
-					<?php } ?>
+					<?php foreach($comments as $comment){ 
+						include '../views/tempComments.php';
+					} ?>
 				</div>
-				
-				
+								
 				<form id="postComment" action="http://dev.romania.com/postComment/<?= $game['id'] ?>"  method="post">
                     
 					<div class="postCommentSection" id="marks">
 						<p>Definissez une note</p>
-
-
+						<div class='starWrapper'>
+							<input type="radio"  id="mark1" name="mark" value="1">  
+							<input type="radio"  id="mark2" name="mark" value="2">  
+							<input type="radio"  id="mark3" name="mark" value="3">  
+							<input type="radio"  id="mark4" name="mark" value="4">  
+							<input type="radio"  id="mark5" name="mark" value="5">  
+							
+							<div class="yellowStarsWrapper">
+								<label id="label1" for="mark1" ></label>
+								<label id="label2" for="mark2" ></label>
+								<label id="label3" for="mark3" ></label>
+								<label id="label4" for="mark4" ></label>
+								<label id="label5" for="mark5" ></label>
+								<div class="yellowStars"></div>
+							</div>
+						</div>
 					</div >
                     
                     <div class="postCommentSection">
@@ -158,6 +151,7 @@ ob_start()?>
 
     
     <script src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
+    <script src="../js/ajax.js"></script> 
     <script src="../js/gamePage.js"></script> 
     
 <?php $content = ob_get_clean(); ?>

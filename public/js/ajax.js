@@ -40,3 +40,18 @@ function ajaxPost(url, data, callback, isJson) {
 	 }
 	 req.send(data);
 }
+
+//
+//var data = {
+//			title:'blabla',
+//			comment:"blabla"
+//			};
+//var url = 'http://dev.romania.com/postComment/1'
+//
+//var callback = function(response){
+//	console.log(response)
+//}
+
+
+
+

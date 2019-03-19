@@ -74,79 +74,43 @@ function displayComWrapper() {
 	});
 }
 
-
-
-function displayStars() {
-	var div = document.getElementById('marks')
-	
-	for (i=0; i<5; i++) {
-		var inputDiv = document.createElement("div");
-		var input = document.createElement("input");
-		input.type = "radio";
-		input.className = "radioBut";
-		input.name = "mark";
-		input.id = i + 1 + " stars";
-		input.value = i + 1;
-		
-		var label = document.createElement("label");
-		label.setAttribute("for", i + 1 + " stars");
-		
-			for (y=0; y<=i; y++) {
-				
-				var img = document.createElement("img");
-				img.src ="../images/CommentNotes/staroff.gif";
-				img.className = i + 1 + " stars";
-				label.appendChild(img)			
-			}
-			
-		inputDiv.appendChild(input)
-		inputDiv.appendChild(label)
-		
-		div.appendChild(inputDiv)
-	}
-}
-
-function starsAnim() {
-	
-	// On récupère les inputs de type radio qui ont pour nom "mark"
-	var radio = $( "input[name='mark']" );
-	
-	for(i=0; i<5; i++){
-		// Pr chacun des input on surveille un changement d'état
-		radio[i].addEventListener("change", function (e) {
-			var target = e.target;
-			
-			// On récupère le form
-			var form = document.getElementById("marks");
-			// On répertori l'ensemble des images contenues dans le form
-			var img = form.getElementsByTagName("img");
-			
-			// Autant de fois qu'il n'y a d'images
-			for(y=0; y<img.length; y++) {
-				// Si l'id de l'élément ciblé est égal à la classe de l'image alors on applique l'img correspondante
-				// à "ON"
-				if (target.id == img[y].className) {
-					img[y].src = "../images/CommentNotes/staron.gif";
-				}
-				// Sinon l'élément doit être "OFF"
-				else {
-					img[y].src = "../images/CommentNotes/staroff.gif";
-				}
-			}
-		});
-	}
-}
-
-function stars () {
-	displayStars()
-	starsAnim()
-}
-
-
 // Appelle des fonctions
 
 buyButAnim();
 displayComWrapper();
-stars();
+
+var form = document.getElementById('postComment');
+
+form.addEventListener('submit',function(event){
+	
+	event.preventDefault();
+	var form = this;
+	
+	var data = new FormData(form);
+	var url = form.action;
+	
+	
+	ajaxPost(url,data,function(json){
+		
+		var response = JSON.parse(json);
+		
+		if(response.success == true){
+			
+			var template = document.createElement('div');
+			template.innerHTML = response.template;
+			template = template.querySelector('.comment')
+			document.querySelector('#comments').appendChild(template);
+			form.reset();
+			alert('Merci pour votre commentaire.')
+			
+		}
+		else{
+			alert(response.message);
+		}
+	} )
+	
+})
+
+
 
 

@@ -22,5 +22,4 @@ class DbConnect {
         }
         return self::$db;
     }
-    
 }
